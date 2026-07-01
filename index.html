@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>سلمى أحمد الزهراني — Marketing Strategist</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ink:#0D111F;
+  --surface:#151B30;
+  --surface2:#1C2440;
+  --paper:#EDEBE3;
+  --text:#EDEBE3;
+  --muted:#8A90AC;
+  --coral:#FF6A4C;
+  --teal:#54E6C8;
+  --line: rgba(237,235,227,0.10);
+  --line-strong: rgba(237,235,227,0.22);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--ink);
+  color:var(--text);
+  font-family:'IBM Plex Sans Arabic',sans-serif;
+  font-weight:400;
+  line-height:1.7;
+  overflow-x:hidden;
+}
+.display{font-family:'Tajawal',sans-serif;}
+.mono{font-family:'IBM Plex Mono',monospace;direction:ltr;display:inline-block;}
+::selection{background:var(--coral);color:var(--ink);}
+a{color:inherit;text-decoration:none;}
+
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+
+/* NAV */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  backdrop-filter:blur(14px);
+  background:rgba(13,17,31,0.75);
+  border-bottom:1px solid var(--line);
+}
+.navwrap{display:flex;align-items:center;justify-content:space-between;padding:16px 32px;max-width:1180px;margin:0 auto;}
+.brand{font-family:'Tajawal',sans-serif;font-weight:800;font-size:19px;letter-spacing:0.3px;}
+.brand span{color:var(--coral);}
+nav ul{list-style:none;display:flex;gap:30px;}
+nav a{font-size:14.5px;color:var(--muted);transition:color .25s;}
+nav a:hover{color:var(--text);}
+.navcta{
+  border:1px solid var(--line-strong);
+  padding:8px 18px;border-radius:100px;font-size:13.5px;color:var(--text);
+  transition:.25s;
+}
+.navcta:hover{background:var(--coral);border-color:var(--coral);color:var(--ink);}
+.navtoggle{display:none;}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;justify-content:center;
+  position:relative;
+  padding:140px 0 100px;
+  overflow:hidden;
+}
+.hero-flow{
+  position:absolute;inset:0;
+  opacity:0.5;
+  pointer-events:none;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'IBM Plex Mono',monospace;direction:ltr;
+  font-size:12.5px;letter-spacing:1.5px;color:var(--teal);
+  border:1px solid rgba(84,230,200,0.35);
+  padding:6px 14px;border-radius:100px;
+  margin-bottom:28px;
+  background:rgba(84,230,200,0.06);
+}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--teal);animation:pulse 1.8s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
+
+.hero h1{
+  font-size:clamp(42px,7vw,86px);
+  font-weight:900;line-height:1.06;
+  margin-bottom:22px;
+  position:relative;z-index:2;
+}
+.hero h1 em{
+  font-style:normal;
+  background:linear-gradient(90deg,var(--coral),#ffb199);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero .role{
+  font-size:clamp(18px,2.4vw,24px);
+  color:var(--muted);
+  font-weight:500;margin-bottom:30px;
+  max-width:720px;
+  position:relative;z-index:2;
+}
+.hero p.tagline{
+  font-size:17px;color:var(--text);opacity:0.85;
+  max-width:640px;margin-bottom:44px;
+  position:relative;z-index:2;
+}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap;position:relative;z-index:2;}
+.btn{
+  padding:14px 30px;border-radius:100px;font-size:15px;font-weight:600;
+  transition:.25s;display:inline-flex;align-items:center;gap:8px;
+}
+.btn-primary{background:var(--coral);color:var(--ink);}
+.btn-primary:hover{background:#ff8465;transform:translateY(-2px);}
+.btn-ghost{border:1px solid var(--line-strong);color:var(--text);}
+.btn-ghost:hover{border-color:var(--teal);color:var(--teal);}
+
+.scrollcue{
+  position:absolute;bottom:36px;right:50%;transform:translateX(50%);
+  font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  letter-spacing:1px;
+}
+.scrollcue .bar{width:1px;height:34px;background:linear-gradient(var(--muted),transparent);}
+
+/* SECTION generic */
+section{padding:120px 0;position:relative;}
+.section-head{margin-bottom:56px;max-width:680px;}
+.kicker{
+  font-family:'IBM Plex Mono',monospace;direction:ltr;text-align:right;
+  font-size:12.5px;letter-spacing:1.5px;color:var(--coral);
+  display:block;margin-bottom:14px;
+}
+.section-head h2{font-size:clamp(28px,4vw,42px);font-weight:800;line-height:1.25;}
+.section-head p{color:var(--muted);margin-top:16px;font-size:16px;max-width:600px;}
+
+/* ABOUT */
+.about{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.about-grid{display:grid;grid-template-columns:0.9fr 1.4fr;gap:64px;align-items:start;}
+.avatar-mark{
+  width:100%;aspect-ratio:1/1.1;border-radius:20px;
+  background:linear-gradient(155deg,var(--surface2),var(--ink));
+  border:1px solid var(--line-strong);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.avatar-mark::before{
+  content:"S.A";
+  font-family:'Tajawal',sans-serif;font-weight:900;font-size:120px;
+  color:transparent;-webkit-text-stroke:1.5px rgba(237,235,227,0.18);
+}
+.avatar-mark::after{
+  content:"";position:absolute;bottom:0;left:0;right:0;height:45%;
+  background:linear-gradient(transparent, rgba(255,106,76,0.12));
+}
+.about-text p{color:var(--text);opacity:0.9;margin-bottom:20px;font-size:16px;}
+.stat-row{display:flex;gap:36px;margin-top:36px;flex-wrap:wrap;}
+.stat-row .stat b{font-family:'IBM Plex Mono',monospace;font-size:28px;color:var(--coral);display:block;}
+.stat-row .stat span{font-size:13px;color:var(--muted);}
+
+/* SERVICES */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;}
+.svc{background:var(--ink);padding:32px 28px;transition:.25s;}
+.svc:hover{background:var(--surface2);}
+.svc .idx{font-family:'IBM Plex Mono',monospace;color:var(--muted);font-size:12px;}
+.svc h3{font-size:18px;font-weight:700;margin:14px 0 8px;}
+.svc p{font-size:13.5px;color:var(--muted);}
+
+/* PLATFORMS marquee */
+.platforms{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:70px 0;}
+.marquee{overflow:hidden;position:relative;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);}
+.marquee-track{display:flex;gap:14px;width:max-content;animation:scroll 34s linear infinite;}
+.marquee:hover .marquee-track{animation-play-state:paused;}
+@keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.chip{
+  font-family:'IBM Plex Mono',monospace;font-size:13.5px;
+  border:1px solid var(--line-strong);padding:12px 22px;border-radius:100px;
+  white-space:nowrap;color:var(--text);background:var(--ink);
+}
+
+/* METHODOLOGY pipeline */
+.pipeline{position:relative;}
+.stage{
+  display:grid;grid-template-columns:120px 1fr;gap:28px;
+  padding:34px 0;border-top:1px solid var(--line);
+  position:relative;
+}
+.stage:last-child{border-bottom:1px solid var(--line);}
+.stage .num{font-family:'IBM Plex Mono',monospace;font-size:15px;color:var(--coral);padding-top:4px;}
+.stage .num small{display:block;color:var(--muted);font-size:11px;margin-top:4px;}
+.stage h3{font-size:20px;font-weight:700;margin-bottom:12px;}
+.stage ul{list-style:none;display:flex;flex-wrap:wrap;gap:10px;}
+.stage ul li{
+  font-size:13px;color:var(--muted);
+  border:1px solid var(--line);padding:6px 14px;border-radius:100px;
+}
+
+/* CHANNEL FLOW */
+.flow-strip{
+  display:flex;align-items:center;flex-wrap:wrap;gap:0;
+  background:var(--surface);border:1px solid var(--line);border-radius:16px;
+  padding:30px;
+}
+.flow-node{
+  font-family:'IBM Plex Mono',monospace;font-size:13.5px;
+  padding:10px 20px;border-radius:100px;border:1px solid var(--line-strong);
+  background:var(--ink);
+}
+.flow-arrow{color:var(--teal);padding:0 14px;font-size:16px;}
+
+/* CASE STUDIES */
+.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;}
+.case-card{
+  border:1px solid var(--line);border-radius:18px;overflow:hidden;
+  background:var(--surface);transition:.3s;position:relative;
+}
+.case-card:hover{border-color:var(--teal);transform:translateY(-4px);}
+.case-top{padding:34px 30px 24px;}
+.case-top .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--teal);letter-spacing:1px;}
+.case-top h3{font-size:26px;font-weight:800;margin:10px 0 12px;}
+.case-top p{color:var(--muted);font-size:14px;}
+.case-meta{
+  display:flex;gap:0;border-top:1px solid var(--line);
+}
+.case-meta div{flex:1;padding:16px 20px;border-left:1px solid var(--line);}
+.case-meta div:last-child{border-left:none;}
+.case-meta span{display:block;font-size:11px;color:var(--muted);margin-bottom:4px;}
+.case-meta b{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--text);}
+
+/* PORTFOLIO */
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px;}
+.tab{
+  font-size:13.5px;padding:9px 18px;border-radius:100px;border:1px solid var(--line-strong);
+  color:var(--muted);cursor:default;
+}
+.tab.active{background:var(--coral);color:var(--ink);border-color:var(--coral);font-weight:600;}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.gitem{
+  aspect-ratio:4/3;border-radius:12px;border:1px dashed var(--line-strong);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;
+  background:linear-gradient(155deg,var(--surface),var(--ink));
+  font-size:12px;color:var(--muted);text-align:center;padding:14px;
+}
+.gitem span{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--teal);}
+
+/* RESULTS dashboard */
+.results{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.kpi-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;}
+.kpi{background:var(--ink);padding:26px 20px;text-align:center;}
+.kpi b{font-family:'IBM Plex Mono',monospace;font-size:26px;color:var(--teal);display:block;}
+.kpi span{font-size:11.5px;color:var(--muted);display:block;margin-top:8px;}
+.results-note{
+  margin-top:22px;font-size:13px;color:var(--muted);
+  border-right:2px solid var(--coral);padding-right:16px;
+}
+
+/* PROCESS flow */
+.process-line{position:relative;padding:50px 0;}
+.pnodes{display:flex;justify-content:space-between;position:relative;flex-wrap:wrap;gap:20px;}
+.pnodes::before{
+  content:"";position:absolute;top:20px;left:0;right:0;height:1px;
+  background:var(--line-strong);z-index:0;
+}
+.pnode{
+  position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:12px;flex:1;min-width:100px;
+}
+.pnode .ball{
+  width:11px;height:11px;border-radius:50%;background:var(--ink);border:2px solid var(--teal);
+}
+.pnode span{font-size:12.5px;color:var(--muted);font-family:'IBM Plex Mono',monospace;text-align:center;}
+
+/* CONTACT */
+.contact{text-align:center;}
+.contact h2{font-size:clamp(30px,5vw,52px);font-weight:900;margin-bottom:20px;}
+.contact p{color:var(--muted);max-width:520px;margin:0 auto 40px;}
+.contact-links{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+
+footer{border-top:1px solid var(--line);padding:32px;text-align:center;font-size:13px;color:var(--muted);}
+
+@media(max-width:860px){
+  nav ul{display:none;}
+  .about-grid{grid-template-columns:1fr;}
+  .grid3{grid-template-columns:1fr;}
+  .case-grid{grid-template-columns:1fr;}
+  .gallery-grid{grid-template-columns:repeat(2,1fr);}
+  .kpi-grid{grid-template-columns:repeat(2,1fr);}
+  .stage{grid-template-columns:1fr;}
+}
+
+.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.gitem{padding:0;overflow:hidden;border:1px solid rgba(255,255,255,.12);background:#111}
+.gitem img{width:100%;height:100%;object-fit:cover;display:block}
+</style>
+</head>
+<body>
+<header>
+<div class="navwrap">
+<div class="brand">سلمى الزهراني<span>.</span></div>
+<nav><ul>
+<li><a href="#about">نبذة</a></li>
+<li><a href="#experience">المسيرة المهنية</a></li>
+<li><a href="#services">الخدمات</a></li>
+<li><a href="#methodology">المنهجية</a></li>
+<li><a href="#work">الأعمال</a></li>
+<li><a href="#results">النتائج</a></li>
+</ul></nav>
+<a class="navcta" href="#contact">تواصل معي</a>
+</div>
+</header>
+<section class="hero">
+<svg class="hero-flow" preserveaspectratio="xMidYMid slice" viewbox="0 0 1200 700">
+<defs>
+<lineargradient id="lg1" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0%" stop-color="#FF6A4C" stop-opacity="0"></stop>
+<stop offset="50%" stop-color="#FF6A4C" stop-opacity="0.8"></stop>
+<stop offset="100%" stop-color="#FF6A4C" stop-opacity="0"></stop>
+</lineargradient>
+<lineargradient id="lg2" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0%" stop-color="#54E6C8" stop-opacity="0"></stop>
+<stop offset="50%" stop-color="#54E6C8" stop-opacity="0.7"></stop>
+<stop offset="100%" stop-color="#54E6C8" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M -100 180 C 200 100, 400 260, 650 150 S 1100 60, 1300 180" fill="none" stroke="#8A90AC" stroke-opacity="0.18" stroke-width="1.5"></path>
+<path d="M -100 380 C 250 320, 450 480, 700 380 S 1050 300, 1300 400" fill="none" stroke="#8A90AC" stroke-opacity="0.18" stroke-width="1.5"></path>
+<path d="M -100 560 C 200 500, 500 620, 750 520 S 1100 460, 1300 560" fill="none" stroke="#8A90AC" stroke-opacity="0.18" stroke-width="1.5"></path>
+<circle fill="#FF6A4C" r="5">
+<animatemotion dur="7s" path="M -100 180 C 200 100, 400 260, 650 150 S 1100 60, 1300 180" repeatcount="indefinite"></animatemotion>
+</circle>
+<circle fill="#54E6C8" r="5">
+<animatemotion dur="9s" path="M -100 380 C 250 320, 450 480, 700 380 S 1050 300, 1300 400" repeatcount="indefinite"></animatemotion>
+</circle>
+<circle fill="#FF6A4C" r="4">
+<animatemotion begin="1s" dur="8s" path="M -100 560 C 200 500, 500 620, 750 520 S 1100 460, 1300 560" repeatcount="indefinite"></animatemotion>
+</circle>
+</svg>
+<div class="wrap">
+<div class="eyebrow"><span class="dot"></span> AVAILABLE FOR OPPORTUNITIES</div>
+<h1>سلمى أحمد <em>الزهراني</em></h1>
+<p class="role">Marketing Strategist &amp; Performance Marketing Specialist</p>
+<p class="tagline">أساعد العلامات التجارية على تحقيق نمو مستدام من خلال استراتيجيات تسويقية تعتمد على البيانات، وإدارة حملات إعلانية مدروسة، وربط أهداف التسويق بالأهداف التجارية لنتائج قابلة للقياس.</p>
+<div class="hero-cta">
+<a class="btn btn-primary" href="#work">استعراض الأعمال</a>
+<a class="btn btn-ghost" href="‎⁨نسخة من   (V2) Salma Alzahrani Resume⁩.pdf" target="_blank">تحميل السيرة الذاتية</a>
+</div>
+</div>
+<div class="scrollcue"><span>SCROLL</span><div class="bar"></div></div>
+</section>
+<section class="about" id="about">
+<div class="wrap about-grid">
+<div class="avatar-mark"></div>
+<div class="about-text">
+<span class="kicker">// ABOUT</span>
+<h2 class="display" style="font-size:32px;font-weight:800;margin-bottom:22px;">نبذة عني</h2>
+<p>متخصصة في التسويق الرقمي وبناء الاستراتيجيات التسويقية، أمتلك خبرة في تخطيط وتنفيذ الحملات الإعلانية عبر مختلف المنصات الرقمية، مع التركيز على تحقيق النمو وتحسين العائد على الاستثمار.</p>
+<p>أؤمن أن نجاح أي حملة يبدأ بفهم السوق والجمهور، ثم بناء استراتيجية واضحة تقود جميع الأنشطة التسويقية للوصول إلى نتائج قابلة للقياس.</p>
+<p>عملت على إدارة حملات متنوعة لعلامات تجارية في قطاعات مختلفة تشمل التجارة الإلكترونية، المنتجات، والخدمات، مع خبرة في تطوير الهوية التسويقية، وتحليل الأداء، وإدارة الميزانيات، والتنسيق بين فرق التسويق والمبيعات.</p>
+<div class="stat-row">
+<div class="stat"><b>5+</b><span>حملات وعملاء حقيقيون</span></div>
+<div class="stat"><b>4.53x</b><span>ROAS في حملة كرانشي</span></div>
+<div class="stat"><b>360°</b><span>من التخطيط للتقرير</span></div>
+</div>
+</div>
+</div>
+</section>
+<section id="experience" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+<div class="wrap">
+<div class="section-head">
+<span class="kicker">// EXPERIENCE</span>
+<h2>المسيرة المهنية</h2>
+<p>أكثر من 6 سنوات خبرة في التسويق الرقمي وإدارة العلامات التجارية.</p>
+</div>
+<div class="pipeline">
+<div class="stage">
+<div class="num">2024<small>PRESENT</small></div>
+<div><h3>Digital &amp; Growth Marketing — TENAS Company</h3><ul>
+<li>بناء وتنفيذ استراتيجيات تسويقية</li><li>إدارة الحملات الرقمية والاتصال بالعلامة</li><li>تحليل السوق وتحديد فرص النمو</li>
+</ul></div>
+</div>
+<div class="stage">
+<div class="num">2023<small>PRESENT</small></div>
+<div><h3>Brand &amp; Marketing Strategy — Freelance</h3><ul>
+<li>إدارة حملات رقمية لعملاء من قطاعات متنوعة</li><li>بناء استراتيجيات وخطط محتوى</li><li>تحسين أداء الحملات ودعم نمو العلامة</li>
+</ul></div>
+</div>
+<div class="stage">
+<div class="num">2022<small>2023</small></div>
+<div><h3>Digital Marketing Specialist — Dialogue Corner</h3><ul>
+<li>تخطيط وتنفيذ حملات لرفع الوعي بالعلامة</li><li>إدارة منصات التواصل الاجتماعي</li><li>متابعة الأداء وتطبيق استراتيجيات التحسين</li>
+</ul></div>
+</div>
+<div class="stage">
+<div class="num">2021<small>2022</small></div>
+<div><h3>Marketing &amp; Content Specialist — Tersas Company</h3><ul>
+<li>إدارة المحتوى الرقمي والاتصال التسويقي</li><li>دعم حملات التوعية ومبادرات المجتمع</li><li>إعداد وترجمة المواد التسويقية</li>
+</ul></div>
+</div>
+</div>
+<div style="margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+<div>
+<span class="kicker">// EDUCATION</span>
+<h3 style="font-size:18px;font-weight:700;">Bachelor of Marketing</h3>
+<p style="color:var(--muted);font-size:13.5px;margin-top:6px;">College of Business Administration · Aug 2017 – May 2020</p>
+</div>
+<div>
+<span class="kicker">// CERTIFICATIONS</span>
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;">
+<div class="chip">Google Ads &amp; Analytics</div>
+<div class="chip">AI Marketing Mastery 2025</div>
+<div class="chip">Advertising Campaign Management</div>
+<div class="chip">Visual &amp; Graphic Design 190H</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="services">
+<div class="wrap">
+<div class="section-head">
+<span class="kicker">// SERVICES</span>
+<h2>الخدمات</h2>
+<p>تغطية متكاملة لرحلة التسويق، من الاستراتيجية إلى التنفيذ والتحليل.</p>
+</div>
+<div class="grid3">
+<div class="svc"><span class="idx">01</span><h3>Marketing Strategy</h3><p>بناء استراتيجيات تسويقية شاملة مبنية على تحليل السوق والجمهور.</p></div>
+<div class="svc"><span class="idx">02</span><h3>Performance Marketing</h3><p>حملات مدفوعة تركّز على النتائج القابلة للقياس والعائد على الاستثمار.</p></div>
+<div class="svc"><span class="idx">03</span><h3>Paid Media</h3><p>إدارة الميزانيات الإعلانية عبر المنصات لتحقيق أفضل أداء.</p></div>
+<div class="svc"><span class="idx">04</span><h3>Brand Positioning</h3><p>تحديد موقع العلامة التجارية ورسائلها التسويقية الأساسية.</p></div>
+<div class="svc"><span class="idx">05</span><h3>Marketing Planning</h3><p>خطط تسويقية زمنية مرتبطة بأهداف العمل.</p></div>
+<div class="svc"><span class="idx">06</span><h3>Campaign Management</h3><p>إدارة كاملة للحملات من الإطلاق حتى التحسين.</p></div>
+<div class="svc"><span class="idx">07</span><h3>Marketing Analytics</h3><p>تحليل مؤشرات الأداء واتخاذ قرارات مبنية على البيانات.</p></div>
+<div class="svc"><span class="idx">08</span><h3>Customer Journey</h3><p>تصميم رحلة العميل من الوعي حتى الولاء.</p></div>
+<div class="svc"><span class="idx">09</span><h3>Funnel Optimization</h3><p>تحسين قمع التسويق لرفع معدلات التحويل.</p></div>
+<div class="svc"><span class="idx">10</span><h3>CRM Integration</h3><p>ربط أدوات إدارة علاقات العملاء بالأنشطة التسويقية.</p></div>
+</div>
+</div>
+</section>
+<section class="platforms">
+<div class="wrap" style="margin-bottom:30px;">
+<span class="kicker">// TOOLS &amp; PLATFORMS</span>
+<h2 style="font-size:26px;font-weight:800;">المنصات التي أعمل عليها</h2>
+</div>
+<div class="marquee">
+<div class="marquee-track">
+<div class="chip">Meta Ads</div><div class="chip">Snapchat Ads</div><div class="chip">TikTok Ads</div>
+<div class="chip">Google Ads</div><div class="chip">Google Analytics</div><div class="chip">Google Tag Manager</div>
+<div class="chip">Looker Studio</div><div class="chip">Canva</div><div class="chip">WordPress</div>
+<div class="chip">Salla</div><div class="chip">Shopify</div><div class="chip">Zoho CRM</div>
+<div class="chip">Meta Ads</div><div class="chip">Snapchat Ads</div><div class="chip">TikTok Ads</div>
+<div class="chip">Google Ads</div><div class="chip">Google Analytics</div><div class="chip">Google Tag Manager</div>
+<div class="chip">Looker Studio</div><div class="chip">Canva</div><div class="chip">WordPress</div>
+<div class="chip">Salla</div><div class="chip">Shopify</div><div class="chip">Zoho CRM</div>
+</div>
+</div>
+</section>
+<section id="methodology">
+<div class="wrap">
+<div class="section-head">
+<span class="kicker">// METHODOLOGY</span>
+<h2>منهجي في بناء الاستراتيجية التسويقية</h2>
+<p>ثماني مراحل متسلسلة، من فهم النشاط إلى تحسين النتائج باستمرار.</p>
+</div>
+<div class="pipeline">
+<div class="stage">
+<div class="num">01<small>ANALYZE</small></div>
+<div><h3>تحليل النشاط</h3><ul>
+<li>دراسة المنتج</li><li>تحليل السوق</li><li>تحليل المنافسين</li><li>SWOT Analysis</li><li>تحديد الفرص</li>
+</ul></div>
+</div>
+<div class="stage">
+<div class="num">02<small>AUDIENCE</small></div>
+<div><h3>تحديد الجمهور</h3><ul>
+<li>Buyer Persona</li><li>الاهتمامات</li><li>السلوك</li><li>المشاكل</li><li>الاحتياجات</li><li>رحلة العميل</li>
+</ul></div>
+</div>
+<div class="stage">
+<div class="num">03<small>GOALS</small></div>
+<div><h3>تحديد الأهداف</h3><ul>
+<li>زيادة المبيعات</li><li>رفع الوعي</li><li>زيادة العملاء المحتملين</li><li>تحسين معدل التحويل</li><li>أهداف SMART</li>
+</ul></div>
+</div>
+<div class="stage">
+<div class="num">04<small>MESSAGING</small></div>
+<div><h3>بناء الرسائل التسويقية</h3><ul>
+<li>الرسالة الرئيسية</li><li>القيمة المقدمة</li><li>نقاط القوة</li><li>سبب الاختيار</li>
+</ul></div>
+</div>
+<div class="stage">
+<div class="num">05<small>CHANNELS</small></div>
+<div><h3>اختيار القنوات</h3><ul>
+<li>Meta Ads</li><li>Snapchat</li><li>TikTok</li><li>Google Search</li><li>Email Marketing</li><li>SEO</li><li>WhatsApp</li>
+</ul></div>
+</div>
+<div class="stage">
+<div class="num">06<small>SETUP</small></div>
+<div><h3>إعداد الحملات</h3><ul>
+<li>تحديد Objective</li><li>تقسيم الجمهور</li><li>بناء Funnel</li><li>Pixel</li><li>UTM</li><li>Conversion API</li>
+</ul></div>
+</div>
+<div class="stage">
+<div class="num">07<small>EXECUTE</small></div>
+<div><h3>التنفيذ</h3><ul>
+<li>إطلاق الحملات</li><li>اختبار الإعلانات</li><li>A/B Testing</li><li>مراقبة الأداء</li>
+</ul></div>
+</div>
+<div class="stage">
+<div class="num">08<small>ANALYZE</small></div>
+<div><h3>التحليل</h3><ul>
+<li>ROAS</li><li>CTR</li><li>CPC</li><li>CPA</li><li>CPM</li><li>Conversion Rate</li><li>Revenue</li>
+</ul></div>
+</div>
+</div>
+<div style="margin-top:60px;">
+<span class="kicker">// CHANNEL SEQUENCE</span>
+<h3 style="font-size:20px;font-weight:700;margin-bottom:20px;">مثال على تسلسل القنوات</h3>
+<div class="flow-strip">
+<div class="flow-node">Meta Ads</div><div class="flow-arrow">←</div>
+<div class="flow-node">Snapchat</div><div class="flow-arrow">←</div>
+<div class="flow-node">TikTok</div><div class="flow-arrow">←</div>
+<div class="flow-node">Google Search</div><div class="flow-arrow">←</div>
+<div class="flow-node">Email Marketing</div><div class="flow-arrow">←</div>
+<div class="flow-node">SEO</div><div class="flow-arrow">←</div>
+<div class="flow-node">WhatsApp</div>
+</div>
+</div>
+</div>
+</section>
+<section id="work">
+<div class="wrap">
+<div class="section-head">
+<span class="kicker">// CASE STUDIES</span>
+<h2>دراسات حالة</h2>
+<p>يستعرض هذا القسم مجموعة من أبرز المشاريع والحملات التي قدتها، مع توضيح أهداف كل مشروع، والمنهجية المتبعة، وآلية التنفيذ، وأبرز النتائج التي تم تحقيقها بالاعتماد على البيانات ومؤشرات الأداء.</p>
+</div>
+<div class="case-grid">
+<div class="case-card">
+<div class="case-top">
+<span class="tag">PERFORMANCE · F&amp;B</span>
+<h3>حملة كرانشي — بيت الشاورما</h3>
+<p>حملة أداء متعددة المنصات لإطلاق بوكس "كرانشي" الجديد. إدارة كاملة للإعلانات عبر سناب شات، ميتا، تويتر/X وتيك توك مع تتبع دقيق لكل منصة على حدة.</p>
+</div>
+<div class="case-meta">
+<div><span>المدة</span><b>13–21 May</b></div>
+<div><span>المنصات</span><b>4 منصات</b></div>
+<div><span>ROAS</span><b>4.53x</b></div>
+</div>
+</div>
+<div class="case-card">
+<div class="case-top">
+<span class="tag">BRAND STRATEGY · RETAIL</span>
+<h3>ليانا — علامة بجامات</h3>
+<p>بناء استراتيجية علامة تجارية متكاملة من الصفر: الهوية، الرسالة، الجمهور، أسلوب التسويق الرقمي وغير الرقمي (مؤثرين، UGC، شراكات صالونات)، وخطة نمو لمضاعفة الطلبات خلال 6–12 شهر.</p>
+</div>
+<div class="case-meta">
+<div><span>النطاق</span><b>استراتيجية شاملة</b></div>
+<div><span>الهدف</span><b>مضاعفة المبيعات</b></div>
+<div><span>من</span><b>100 → 300 طلب/شهر</b></div>
+</div>
+</div>
+<div class="case-card">
+<div class="case-top">
+<span class="tag">CONVERSION · EDUCATION</span>
+<h3>حملة اليوم الوطني — مركز تمهير للتدريب</h3>
+<p>حملة بيع مباشر للتسجيل في الدورات التدريبية بناءً على عرض اليوم الوطني، عبر سناب شات وتيك توك، مع ربط وتحليل كامل عبر Google Analytics لمصادر الزيارات.</p>
+</div>
+<div class="case-meta">
+<div><span>المدة</span><b>18–24 Sep</b></div>
+<div><span>المنصات</span><b>Snapchat + TikTok</b></div>
+<div><span>نقرات</span><b>5,697</b></div>
+</div>
+</div>
+<div class="case-card">
+<div class="case-top">
+<span class="tag">LEAD GENERATION · REAL ESTATE</span>
+<h3>مزاد نُخَب جازان — شركة تفاعل العقارية</h3>
+<p>حملة توعية وتحويل للتعريف بمزاد عقاري عبر سناب شات، بهدف رفع الزيارات لصفحة المزاد وزيادة الاشتراكات، مع ربط بكسل الموقع لإعادة الاستهداف.</p>
+</div>
+<div class="case-meta">
+<div><span>المدة</span><b>1–13 Aug</b></div>
+<div><span>المنصات</span><b>Snapchat</b></div>
+<div><span>ظهور</span><b>295,135</b></div>
+</div>
+</div>
+</div>
+<div style="margin-top:70px;">
+<span class="kicker">// PORTFOLIO GALLERY</span>
+<h3 style="font-size:20px;font-weight:700;margin-bottom:22px;">معرض الأعمال</h3>
+<div class="tabs">
+<div class="tab active">الحملات الإعلانية</div>
+<div class="tab">الخطط التسويقية</div>
+<div class="tab">التقارير</div>
+<div class="tab">المحتوى</div>
+<div class="tab">صفحات الهبوط</div>
+<div class="tab">الهوية البصرية</div>
+</div>
+<div class="gallery-grid"><div class="gitem"><img alt="حملة مبيعات" src="A07FEB07-008B-4A99-83DE-C4C5DE74DBF4.jpeg"/></div><div class="gitem"><img alt="Google Analytics" src="E8595039-AEB9-4A8B-BA38-FF5F09FC2BC3.jpeg"/></div><div class="gitem"><img alt="تقرير الأداء" src="001E3E01-580A-48A6-80B0-BF2309C373C3.jpeg"/></div><div class="gitem"><img alt="لوحة مؤشرات" src="AB184605-D3F8-4BF3-8F24-0A6F0E10E95F.jpeg"/></div></div>
+</div>
+</div>
+</section>
+<section class="results" id="results">
+<div class="wrap">
+<div class="section-head">
+<span class="kicker">// PERFORMANCE</span>
+<h2>لوحة النتائج</h2>
+<p>أرقام حقيقية موثّقة من حملات فعلية أدرتها، مأخوذة من لوحات التحكم الإعلانية وGoogle Analytics.</p>
+</div>
+<div class="kpi-grid">
+<div class="kpi"><b>4.53x</b><span>ROAS إجمالي — حملة كرانشي</span></div>
+<div class="kpi"><b>11.83x</b><span>أعلى ROAS منصة — سناب شات</span></div>
+<div class="kpi"><b>3.56M</b><span>ظهور — حملة كرانشي</span></div>
+<div class="kpi"><b>9,672</b><span>نقرة — حملة كرانشي</span></div>
+<div class="kpi"><b>63%</b><span>من الزيارات عبر تيك توك — تمهير</span></div>
+</div>
+<p class="results-note">المصدر: تقارير حملات فعلية لعملاء حقيقيين (بيت الشاورما، تفاعل العقارية، مركز تمهير للتدريب)، مع لوحات تحكم موثّقة لكل رقم.</p>
+</div>
+</section>
+<section class="process-line">
+<div class="wrap">
+<div class="section-head">
+<span class="kicker">// WORKFLOW</span>
+<h2>آلية العمل</h2>
+</div>
+<div class="pnodes">
+<div class="pnode"><div class="ball"></div><span>Research</span></div>
+<div class="pnode"><div class="ball"></div><span>Strategy</span></div>
+<div class="pnode"><div class="ball"></div><span>Planning</span></div>
+<div class="pnode"><div class="ball"></div><span>Execution</span></div>
+<div class="pnode"><div class="ball"></div><span>Optimization</span></div>
+<div class="pnode"><div class="ball"></div><span>Reporting</span></div>
+<div class="pnode"><div class="ball"></div><span>Scale</span></div>
+</div>
+</div>
+</section>
+<section class="contact" id="contact">
+<div class="wrap">
+<span class="kicker" style="text-align:center;">// GET IN TOUCH</span>
+<h2>لنبني استراتيجيتك التسويقية القادمة</h2>
+<p>متاحة للعمل على مشاريع جديدة وفرص وظيفية في التسويق الاستراتيجي والأداء الرقمي.</p>
+<div class="contact-links">
+<a class="btn btn-primary" href="mailto:Salma1211284@gmail.com">Salma1211284@gmail.com</a>
+<a class="btn btn-ghost" href="tel:+966557520262">0557520262</a>
+</div>
+</div>
+</section>
+<footer>© 2026 سلمى أحمد الزهراني — Marketing Strategist</footer>
+</body>
+</html>
